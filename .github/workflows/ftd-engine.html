@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The FTD Engine | Apidae</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* BRANDING INSTRUCTIONS:
+           Replace the variables below with Apidae's specific Hex codes.
+        */
+        :root {
+            --brand-primary: #FEB737; /* Honey */
+            --brand-secondary: #01B3B3; /* Lagoon */
+            --brand-accent: #FEB737; /* Honey */
+            --bg-dark: #545454;
+            --bg-card: #1e293b;
+            --text-light: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .brand-text { color: var(--brand-primary); }
+        .brand-bg { background-color: var(--brand-primary); }
+        .btn-primary {
+            background: linear-gradient(90deg, var(--brand-primary));
+            color: #000;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .btn-primary:hover { transform: scale(1.05); }
+        
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .neon-border {
+            box-shadow: 0 0 15px rgba(0, 240, 181, 0.2);
+            border: 1px solid var(--brand-primary);
+        }
+
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-panel border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold tracking-tighter">apidae</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#problem" class="hover:text-teal-400 px-3 py-2 rounded-md text-sm font-medium">The Problem</a>
+                        <a href="#solution" class="hover:text-teal-400 px-3 py-2 rounded-md text-sm font-medium">The Engine</a>
+                        <a href="#tiers" class="hover:text-teal-400 px-3 py-2 rounded-md text-sm font-medium">Tiers</a>
+                        <a href="#contact" class="btn-primary px-4 py-2 rounded-md text-sm">Start Audit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative overflow-hidden pt-32 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                Stop Buying "Traffic". <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">Start Acquiring FTDs.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400">
+                We transform your acquisition from a "Leaky Bucket" into a predictable, scalable **FTD Engine**. Traffic + Data Infrastructure in one partner.
+            </p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="#tiers" class="btn-primary px-8 py-4 rounded-lg text-lg">View The Solution</a>
+                <a href="#problem" class="px-8 py-4 rounded-lg border border-gray-600 hover:border-teal-400 transition">How It Works</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Problem Section -->
+    <section id="problem" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold brand-text uppercase tracking-wide">The Old Way is Broken</h2>
+                <p class="mt-2 text-3xl font-extrabold text-white sm:text-4xl">Why You're Flying Blind</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Problem 1 -->
+                <div class="glass-panel p-8 rounded-xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                        <i class="fa-solid fa-money-bill-wave text-9xl"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="h-12 w-12 rounded-full bg-red-500/20 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-bucket text-red-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">The Leaky Bucket</h3>
+                        <p class="text-gray-400">You pour massive budget into affiliates and ads, but bad tracking and fraud drain your ROI before you see it.</p>
+                    </div>
+                </div>
+
+                <!-- Problem 2 -->
+                <div class="glass-panel p-8 rounded-xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                        <i class="fa-solid fa-chart-line text-9xl"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="h-12 w-12 rounded-full bg-red-500/20 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-eye-slash text-red-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">The Black Box</h3>
+                        <p class="text-gray-400">You trust the ad platform's data. You trust the affiliate's report. But you have no single source of truth to verify success.</p>
+                    </div>
+                </div>
+
+                <!-- Problem 3 -->
+                <div class="glass-panel p-8 rounded-xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                        <i class="fa-solid fa-people-group text-9xl"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="h-12 w-12 rounded-full bg-red-500/20 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-user-tie text-red-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Vendor Fatigue</h3>
+                        <p class="text-gray-400">One agency for SEO. One for PPC. Another for tracking. Nobody talks to each other, and you manage the chaos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution / Architecture -->
+    <section id="solution" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold brand-text uppercase tracking-wide mb-4">The Solution</h2>
+                    <h3 class="text-4xl font-extrabold text-white mb-6">The FTD Engine</h3>
+                    <p class="text-gray-300 text-lg mb-6">
+                        We don't just run ads. We build an **infrastructure**. We combine elite media buying with data engineering to create a "Glass Box" view of your growth.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-teal-500 text-white">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg leading-6 font-medium text-white">Traffic Layer (The Hunter)</h4>
+                                <p class="mt-2 text-base text-gray-400">
+                                    Multi-channel acquisition strategies managed by specialists. We hunt for FTDs, not clicks.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-cyan-500 text-white">
+                                    <i class="fa-solid fa-database"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg leading-6 font-medium text-white">Data Layer (The Truth)</h4>
+                                <p class="mt-2 text-base text-gray-400">
+                                    We implement **Routy** & **Keitaro** to pipe all data into **BigQuery**, giving you a single dashboard of truth.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 lg:mt-0 relative">
+                    <!-- Tech Stack Visualization -->
+                    <div class="glass-panel p-6 rounded-2xl neon-border">
+                        <div class="flex justify-between items-center mb-8">
+                            <div class="text-center">
+                                <div class="bg-gray-700 p-3 rounded-lg mb-2"><i class="fa-brands fa-facebook text-blue-500 text-2xl"></i></div>
+                                <div class="text-xs text-gray-400">Ads</div>
+                            </div>
+                            <div class="h-1 w-12 bg-gray-600"></div>
+                            <div class="text-center">
+                                <div class="bg-teal-900 p-3 rounded-lg mb-2 border border-teal-500"><i class="fa-solid fa-filter text-teal-400 text-2xl"></i></div>
+                                <div class="text-xs text-teal-400 font-bold">Keitaro</div>
+                            </div>
+                            <div class="h-1 w-12 bg-gray-600"></div>
+                             <div class="text-center">
+                                <div class="bg-gray-700 p-3 rounded-lg mb-2"><i class="fa-solid fa-globe text-white text-2xl"></i></div>
+                                <div class="text-xs text-gray-400">Brand</div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center mb-8">
+                            <div class="h-12 w-1 bg-gray-600"></div>
+                        </div>
+
+                        <div class="bg-gray-800 p-4 rounded-xl border border-gray-700 text-center mb-8">
+                            <h4 class="text-sm font-bold text-gray-300 mb-2">Data Aggregation Layer</h4>
+                            <div class="flex justify-center gap-4 items-center">
+                                <div class="bg-purple-900/50 p-2 rounded border border-purple-500 text-purple-300 text-sm font-bold">
+                                    <i class="fa-solid fa-network-wired mr-2"></i>Routy
+                                </div>
+                                <span class="text-xs text-gray-500">+</span>
+                                <div class="bg-blue-900/50 p-2 rounded border border-blue-500 text-blue-300 text-sm font-bold">
+                                    <i class="fa-solid fa-server mr-2"></i>BigQuery
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart Mockup -->
+                        <div class="bg-gray-900 p-4 rounded-lg border border-gray-700">
+                            <canvas id="roiChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Tiers -->
+    <section id="tiers" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white sm:text-4xl">Choose Your Velocity</h2>
+                <p class="mt-4 text-gray-400">From diagnosis to domination. How we engage.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Tier 1 -->
+                <div class="glass-panel p-8 rounded-2xl hover:border-teal-400 transition duration-300 flex flex-col">
+                    <div class="mb-4">
+                        <span class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-xs font-bold uppercase">Tier 1</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">The Audit</h3>
+                    <p class="text-gray-400 text-sm mb-6">Stop the bleeding. We analyze your affiliate data to tell you who to Kill, Keep, or Scale.</p>
+                    <div class="text-4xl font-bold text-teal-400 mb-6">$7,500 <span class="text-sm text-gray-500 font-normal">/ one-time</span></div>
+                    
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-center text-sm text-gray-300"><i class="fa-solid fa-check text-teal-400 mr-2"></i> Full Traffic Audit</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="fa-solid fa-check text-teal-400 mr-2"></i> Tracking Health Check</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="fa-solid fa-check text-teal-400 mr-2"></i> "Kill/Keep/Scale" Report</li>
+                        <li class="flex items-center text-sm font-bold text-white mt-4 border-t border-gray-700 pt-4"><i class="fa-solid fa-shield-halved text-teal-400 mr-2"></i> 100% Risk Reversal Guarantee</li>
+                    </ul>
+                    
+                    <button class="w-full py-3 rounded-lg border border-gray-600 hover:bg-gray-800 transition text-white font-bold">Get The Audit</button>
+                </div>
+
+                <!-- Tier 2 (Highlighted) -->
+                <div class="bg-gradient-to-b from-gray-800 to-gray-900 p-8 rounded-2xl border-2 border-teal-500 transform md:-translate-y-4 shadow-2xl shadow-teal-500/20 flex flex-col relative">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-teal-500 text-black px-4 py-1 rounded-full text-xs font-bold uppercase">
+                        Most Popular
+                    </div>
+                    <div class="mb-4">
+                        <span class="bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full text-xs font-bold uppercase">Tier 2</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Performance Partner</h3>
+                    <p class="text-gray-400 text-sm mb-6">We become your engine. We build the data infrastructure AND drive the traffic.</p>
+                    <div class="mb-6">
+                        <div class="text-3xl font-bold text-white">€4k - €6k <span class="text-sm text-gray-500 font-normal">/ mo (Base)</span></div>
+                        <div class="text-xl font-bold text-teal-400">+ % Performance</div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-center text-sm text-gray-300"><i class="fa-solid fa-check text-teal-400 mr-2"></i> <strong>Routy</strong> Aggregation Setup</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="fa-solid fa-check text-teal-400 mr-2"></i> Dedicated Data Engineer</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="fa-solid fa-check text-teal-400 mr-2"></i> Media Buying Team</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="fa-solid fa-check text-teal-400 mr-2"></i> Real-time Metabase Dashboards</li>
+                    </ul>
+                    
+                    <button class="w-full py-3 rounded-lg btn-primary transition">Apply for Partnership</button>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="glass-panel p-8 rounded-2xl hover:border-teal-400 transition duration-300 flex flex-col">
+                    <div class="mb-4">
+                        <span class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-xs font-bold uppercase">Tier 3</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">The Asset</h3>
+                    <p class="text-gray-400 text-sm mb-6">Own the machine. We build it, staff it, and transfer the entire engine in-house to you.</p>
+                    <div class="text-4xl font-bold text-white mb-6">$150k+ <span class="text-sm text-gray-500 font-normal">/ one-time</span></div>
+                    
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-center text-sm text-gray-300"><i class="fa-solid fa-check text-teal-400 mr-2"></i> Full Tech Stack Transfer</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="fa-solid fa-check text-teal-400 mr-2"></i> Staff Hiring & Training</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="fa-solid fa-check text-teal-400 mr-2"></i> SOP Implementation</li>
+                        <li class="flex items-center text-sm text-gray-300"><i class="fa-solid fa-check text-teal-400 mr-2"></i> 12 Months Rev-Share Tail</li>
+                    </ul>
+                    
+                    <button class="w-full py-3 rounded-lg border border-gray-600 hover:bg-gray-800 transition text-white font-bold">Contact Sales</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- The Guarantee -->
+    <section class="py-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-teal-900/10"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-2xl font-bold text-white mb-4">The $7,500 Guarantee</h2>
+            <p class="text-lg text-gray-300 mb-8">
+                "If we cannot find at least $7,500 in wasted affiliate spend or new, untapped profit in your Audit, <span class="text-white font-bold underline decoration-teal-400 decoration-4">you pay us nothing.</span>"
+            </p>
+            <div class="flex justify-center items-center space-x-4 text-sm text-gray-500">
+                <span><i class="fa-solid fa-lock mr-1"></i> Zero Risk</span>
+                <span><i class="fa-solid fa-bolt mr-1"></i> Fast Delivery</span>
+                <span><i class="fa-solid fa-thumbs-up mr-1"></i> Proven Results</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <span class="text-2xl font-bold tracking-tighter text-white">apidae</span>
+                <p class="text-gray-500 text-sm mt-1">Your Digital Marketing Growth Partner.</p>
+            </div>
+            <div class="text-gray-500 text-sm">
+                &copy; 2025 Apidae. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Chart.js implementation for the dashboard visual
+        const ctx = document.getElementById('roiChart').getContext('2d');
+        const roiChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Ad Spend',
+                    data: [1000, 1500, 2000, 2500, 3000, 3500],
+                    borderColor: '#64748b',
+                    tension: 0.4
+                }, {
+                    label: 'True Profit (FTD)',
+                    data: [800, 1800, 3500, 5200, 7500, 9800],
+                    borderColor: '#00F0B5',
+                    backgroundColor: 'rgba(0, 240, 181, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { display: false },
+                    x: { display: false }
+                },
+                elements: {
+                    point: { radius: 0 }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
